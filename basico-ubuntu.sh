@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+t#!/usr/bin/env bash
 echo "Instalando estructura basica para clase virtualhost y proxy reverso"
 
 # Habilitando la memoria de intercambio.
@@ -23,12 +23,12 @@ sdk install java 17.0.9-tem
 sudo service apache2 start
 
 # Clonando el repositorio.
-git clone https://github.com/Armandogl14/virtualhost-parcial-2.git
+git clone https://github.com/Armandogl14/virtualhost-proyecto-final.git
 
 # Copiando los archivos de configuración en la ruta indicada.
-sudo cp ~/virtualhost-parcial-2/configuraciones/virtualhost.conf /etc/apache2/sites-available/
-sudo cp ~/virtualhost-parcial-2/configuraciones/seguro.conf /etc/apache2/sites-available/
-sudo cp ~/virtualhost-parcial-2/configuraciones/proxyreverso.conf /etc/apache2/sites-available/
+sudo cp ~/virtualhost-proyecto-final/configuraciones/virtualhost.conf /etc/apache2/sites-available/
+sudo cp ~/virtualhost-proyecto-final/configuraciones/seguro.conf /etc/apache2/sites-available/
+sudo cp ~/virtualhost-proyecto-final/configuraciones/proxyreverso.conf /etc/apache2/sites-available/
 
 # Creando las estructuras de los archivos.
 sudo mkdir -p /var/www/html/app1 /var/www/html/app2
@@ -39,13 +39,17 @@ printf "<h1>Sitio Aplicacion #2</h1>" | sudo tee /var/www/html/app2/index.html
 
 # Clonando el proyecto y moviendo a la carpeta descargada.
 cd ~/
-git clone https://github.com/Armandogl14/parcial-2-web.git
-cd parcial-2-web
+git clone https://github.com/Armandogl14/proyecto-final-web.git
+cd proyecto-final-web
 
 # Ejecutando la creación de fatjar
 chmod +x gradlew
 ./gradlew shadowjar
 
+# Creando variables de entorno
+export URL_MONGO="mongodb+srv://ajgl0001:o8xEX97KS8GPGnR0@cluster0.hadgter.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+export DB_NOMBRE="ProyectoFinal"
+
 # Subiendo la aplicación puerto por defecto.
-mkdir -p ~/parcial-2-web/build/libs/
-java -jar ~/parcial-2-web/build/libs/app.jar > ~/parcial-2-web/build/libs/salida.txt 2> ~/parcial-2-web/build/libs/error.txt &
+mkdir -p ~/proyecto-final-web/build/libs/
+java -jar ~/proyecto-final-web/build/libs/app.jar > ~/proyecto-final-web/build/libs/salida.txt 2> ~/proyecto-final-web/build/libs/error.txt &
