@@ -5,7 +5,7 @@ En una instancia basada en Amazon Linux, clonar el proyecto actual y ejecutar lo
 ### Ubuntu:
 
 `
-wget https://raw.githubusercontent.com/Armandogl14/virtualhost-parcial-2/master/basico-ubuntu.sh && chmod +x basico-ubuntu.sh && bash basico-ubuntu.sh
+wget https://raw.githubusercontent.com/Armandogl14/virtualhost-proyecto-final/master/basico-ubuntu.sh && chmod +x basico-ubuntu.sh && bash basico-ubuntu.sh
 `
 
 Una vez terminado el script, salga de la terminar y vuelva a conectarse. Validar que los siguientes comandos:
