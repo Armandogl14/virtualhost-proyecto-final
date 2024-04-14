@@ -45,6 +45,7 @@ cd proyecto-final-web
 # Ejecutando la creación de fatjar
 chmod +x gradlew
 ./gradlew shadowjar
+./gradlew generateProto
 
 # Creando variables de entorno
 export URL_MONGO="mongodb+srv://ajgl0001:o8xEX97KS8GPGnR0@cluster0.hadgter.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
